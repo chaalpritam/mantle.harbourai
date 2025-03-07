@@ -47,7 +47,8 @@ function ChatUI() {
     if (isConnected && address) {
       fetchThreads()
     }
-  }, [isConnected, address, fetchThreads])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected, address])
 
 
   const fetchMessagesForThread = async (threadId: string) => {
@@ -121,18 +122,6 @@ function ChatUI() {
 
   return (
     <div className="h-screen">
-      {/* Top Navigation Bar */}
-      {/* <div className="p-2 border-b flex justify-between items-center"> */}
-      {/*   <h2 className="text-lg font-semibold">Harbour AI</h2> */}
-      {/*   <div className="flex space-x-4"> */}
-      {/*     <Link href="/home"><Button variant="ghost">Home</Button></Link> */}
-      {/*     <Link href="/home/dao"><Button variant="ghost">DAO</Button></Link> */}
-      {/*     <Link href="/home/proposal"><Button variant="ghost">Proposal</Button></Link> */}
-      {/*     <Link href="/home/agents"><Button variant="ghost">Create Agents</Button></Link> */}
-      {/*     <Link href="/home/token"><Button variant="ghost">Token</Button></Link> */}
-      {/*   </div> */}
-      {/*   <ConnectKitButton /> */}
-      {/* </div> */}
       {isConnected ?
         <div className="flex bg-background">
           {/* Sidebar */}
